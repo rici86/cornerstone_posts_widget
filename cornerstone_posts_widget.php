@@ -21,6 +21,9 @@ function render_cornerstone_posts_widget() {
         'post_type' => 'post',
         'posts_per_page' => -1,
     ));
+	// Total number of posts
+    echo '<div style="text-align:right; margin-bottom:0.25rem;"><small>Total cornerstone posts: ' . $cornerstone_posts->found_posts . '</small></div>';
+
     // Display table if cornerstone posts exist
     if ($cornerstone_posts->have_posts()) {
         echo '<table class="widefat striped" style="border: none; margin-bottom:1rem;">';
@@ -46,15 +49,15 @@ function render_cornerstone_posts_widget() {
 
             echo '<tr>';
             // Post Title column with edit link
-            echo '<td><a href="' . get_edit_post_link($post_id) . '">' . $post_title . '</a></td>';
+            echo '<td style="font-size:12px;"><a href="' . get_edit_post_link($post_id) . '">' . $post_title . '</a></td>';
             // Categories column
-            echo '<td>' . $categories_list . '</td>';
+            echo '<td style="font-size:12px;">' . $categories_list . '</td>';
             // Date Published column
             echo '<td>' . $post_date . '</td>';
             // Number of Comments column
             echo '<td>' . $post_comments_count . '</td>';
             // View Post column
-            echo '<td><a href="' . get_permalink($post_id) . '" target="_blank" class="button">View Post</a></td>';
+            echo '<td><a href="' . get_permalink($post_id) . '" target="_blank" class="button" style="font-size: 12px; padding: 0 0.25rem;">View Post</a></td>';
             echo '</tr>';
         }
 
