@@ -32,7 +32,7 @@ function render_cornerstone_posts_widget() {
         echo '<th>Categories</th>';
         echo '<th>Date</th>';
         echo '<th><span class="vers comment-grey-bubble" title="Comments"></span></th>';
-        echo '<th>View Post</th>';
+        echo '<th>View </th>';
         echo '</tr></thead><tbody>';
 
         // Loop through cornerstone posts
@@ -53,15 +53,18 @@ function render_cornerstone_posts_widget() {
             // Categories column
             echo '<td style="font-size:12px;">' . $categories_list . '</td>';
             // Date Published column
-            echo '<td>' . $post_date . '</td>';
+            echo '<td style="font-size:12px;">' . $post_date . '</td>';
             // Number of Comments column
-            echo '<td>' . $post_comments_count . '</td>';
+            echo '<td style="font-size:12px;">' . $post_comments_count . '</td>';
             // View Post column
-            echo '<td><a href="' . get_permalink($post_id) . '" target="_blank" class="button" style="font-size: 12px; padding: 0 0.25rem;">View Post</a></td>';
+            echo '<td style="font-size:12px;"><a href="' . get_permalink($post_id) . '" target="_blank" class="button" style="font-size: 12px; padding: 0 0.25rem;">View</a></td>';
             echo '</tr>';
         }
 
         echo '</tbody></table>';
+		echo '<div style="text-align: center; margin-bottom: 1rem;">';
+		echo '<a href="https://www.lrcrafts.it/wp-admin/edit.php?yoast_filter=cornerstone&post_type=post" class="button">See All</a>';
+		echo '</div>';
     } else {
         echo 'No cornerstone posts found.';
     }
