@@ -63,7 +63,7 @@ function render_cornerstone_posts_widget() {
 
         echo '</tbody></table>';
 		echo '<div style="text-align: center; margin-bottom: 1rem;">';
-		echo '<a href="https://www.lrcrafts.it/wp-admin/edit.php?yoast_filter=cornerstone&post_type=post" class="button">See All</a>';
+		echo '<a href="'.get_admin_url(null, 'edit.php').'?yoast_filter=cornerstone&post_type=post" class="button">See All</a>';
 		echo '</div>';
     } else {
         echo 'No cornerstone posts found.';
